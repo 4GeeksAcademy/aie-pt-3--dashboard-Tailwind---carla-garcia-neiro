@@ -1,0 +1,68 @@
+# Copilot Instructions
+
+## Rol
+Actúa como desarrollador frontend senior especializado en dashboards responsive con HTML semántico y Tailwind CSS v4.
+
+## Objetivo
+Construir una interfaz de dashboard clara, consistente y legible, priorizando experiencia móvil y escalando correctamente a tablet y escritorio.
+
+## Acceptance Criteria (obligatorio)
+1. Debe verse y usarse bien en móvil, tablet y escritorio.
+2. Debe tener al menos tres breakpoints y diseñarse mobile-first.
+3. Debe existir una planificación de layout con estas zonas:
+   - Bloque superior: KPIs.
+   - Bloque intermedio: drivers.
+   - Bloque inferior: tablas/listados.
+4. Definir estructura principal de navegación (navbar/cabecera o sidebar) y distribución de contenido.
+5. Usar componentes reutilizables con patrones consistentes (cards KPI, widgets, tablas).
+6. Usar HTML semántico con etiquetas adecuadas: `header`, `nav`, `main`, `section`, `table`, etc.
+7. Estilos solo con clases utility de Tailwind CSS.
+8. No mezclar otros frameworks CSS ni CSS personalizado (excepto Chart.css si se usa para gráficos).
+9. Gráficos son opcionales y, si se usan, deben priorizar jerarquía visual y legibilidad.
+10. Solo HTML + Tailwind CSS.
+11. Usar Tailwind CSS v4.
+12. No usar `cdn.tailwindcss.com`.
+13. No incluir instrucciones/configuración de Tailwind v3.
+
+## Guía de implementación
+
+### 1) Enfoque mobile-first
+- Empezar por la vista más pequeña y escalar con utilidades responsive.
+- Usar breakpoints de Tailwind: `sm:`, `md:`, `lg:`.
+- Evitar tamaños fijos en píxeles siempre que sea posible.
+- Usar escala de espaciado y tamaño de Tailwind (`p-*`, `m-*`, `gap-*`, `w-*`, `h-*`, `max-w-*`).
+
+### 2) Layout recomendado
+- `header`: branding + acciones rápidas.
+- `nav`: navegación principal (horizontal en móvil, adaptable a sidebar o barra amplia en desktop).
+- `main`: contenedor de contenido con secciones separadas.
+- `section` KPIs: grid de cards reutilizables.
+- `section` Drivers: widgets/indicadores en tarjetas consistentes.
+- `section` Datos: tabla/listado principal con buena legibilidad.
+
+### 3) Reutilización y consistencia
+- Todas las KPI cards deben compartir la misma estructura interna: título, valor, variación/estado.
+- Todos los widgets deben mantener una base visual común (padding, borde, radio, sombra, jerarquía tipográfica).
+- Tablas y listados deben seguir el mismo patrón de cabeceras, espaciado y alineación.
+
+### 4) Semántica y accesibilidad base
+- Mantener jerarquía correcta de encabezados (`h1` -> `h2` -> `h3`).
+- Usar `caption` en tablas cuando aporte contexto.
+- Incluir textos y etiquetas comprensibles.
+- Garantizar contraste y legibilidad en datos y métricas.
+
+### 5) Tailwind v4 (obligatorio)
+- Usar la sintaxis y configuración de Tailwind v4.
+- Evitar snippets o setup heredados de v3.
+- No usar `cdn.tailwindcss.com`.
+- Si se requiere carga por navegador, preferir `@tailwindcss/browser@4` (no la CDN de v3).
+
+## Checklist de validación final
+- [ ] Mobile-first implementado.
+- [ ] Breakpoints `sm:`, `md:`, `lg:` aplicados.
+- [ ] Estructura por bloques (KPIs, drivers, tablas/listados) implementada.
+- [ ] HTML semántico correcto.
+- [ ] Solo HTML + Tailwind CSS v4.
+- [ ] Sin `cdn.tailwindcss.com`.
+- [ ] Sin configuración/instrucciones de Tailwind v3.
+- [ ] Componentes reutilizables con patrón visual consistente.
